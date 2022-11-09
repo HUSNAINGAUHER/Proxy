@@ -4,8 +4,6 @@ import { DownloadBanner } from '@/components/DownloadBanner'
 import { Region } from '@/components/Regions'
 import { MainSection, Section } from '@/components/Section'
 import { Body } from '@/layouts/Body'
-import { Footer } from '@/layouts/Footer'
-import { Header } from '@/layouts/Header'
 import { useRouter } from 'next/router'
 
 const Regions = [
