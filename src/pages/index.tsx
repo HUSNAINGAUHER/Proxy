@@ -131,7 +131,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className='mt-5'>
+        <div className='mt-5 -mx-20'>
           <DownloadBanner />
         </div>
       </Body>
