@@ -19,3 +19,17 @@ a:hover {
 .content ul {
   @apply my-6;
 }
+
+body {
+  @apply bg-black;
+  @apply text-white;
+  font-family: OpenSans;
+}
+
+
+@font-face {
+font-family: 'OpenSans';
+src: url('../assets/sansation/Sansation_Regular.ttf');
+font-weight: 400;
+font-style: normal;
+}
