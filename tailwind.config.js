@@ -14,6 +14,14 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
     },
+    screens: {
+      xs: '375px',
+      sm: '576px',
+
+      md: '960px',
+
+      lg: '1440px',
+    },
     extend: {
       colors: {
         gray: {

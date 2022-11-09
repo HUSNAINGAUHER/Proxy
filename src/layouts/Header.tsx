@@ -8,9 +8,12 @@ export const Header = () => {
   const { push } = useRouter()
   return (
     <>
-      <div className='flex justify-between align-center py-4 mx-16'>
+      <div
+        className='flex flex-wrap justify-between align-center py-4'
+        style={{  maxWidth: '1350px', width: '100%', margin: '0 auto' }}
+      >
         <Image alt='logo' src='/assets/images/Logo.svg' width={172} height={36} />
-        <div className='flex-row flex justify-between gap-x-16 align-center'>
+        <div className='flex-row flex-wrap flex justify-between gap-x-16 align-center'>
           {Routes.map((R, index) => (
             <a
               key={index}

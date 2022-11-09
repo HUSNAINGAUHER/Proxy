@@ -25,7 +25,10 @@ export const Footer = () => {
 
   return (
     <div style={{ backgroundColor: '#011F1E' }}>
-      <div className='flex justify-between mx-20 p-20'>
+      <div
+        className='flex flex-wrap justify-between  sm:justify-center xs:justify-center lg:justify-between py-20'
+        style={{ marginLeft: '69px', maxWidth: '1350px', width: '100%', margin: '0 auto' }}
+      >
         <div className='w-80'>
           <Image
             width={172}
@@ -52,10 +55,16 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-between gap-40'>
+        <div className='flex justify-between sm:justify-center xs:justify-center lg:justify-between gap-x-40 flex-wrap mt-10'>
           <ListItem heading='About Us' links={AboutUs} />
           <ListItem heading='Navigation' links={Navigation} />
           <ListItem heading='Contact' links={Contact} />
+        </div>
+      </div>
+      <div className='flex justify-center items-center py-10 px-20 text-center'>
+        <div style={{ color: '#0D8581' }}>
+          Due to policy, this service is not avaiable in mainland China. Thank you for your
+          understanding!
         </div>
       </div>
     </div>
@@ -68,7 +77,7 @@ type ListItemProps = {
 }
 const ListItem = ({ heading, links }: ListItemProps) => {
   return (
-    <div className='p-5'>
+    <div className='p-5 w-1/1'>
       <div className='text-xl'>{heading}</div>
       <div className='flex flex-col'>
         {links.map((link, index) => {

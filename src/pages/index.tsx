@@ -14,7 +14,7 @@ const Regions = [
   },
   {
     img: 'Japan.svg',
-    country: 'Janpan',
+    country: 'Japan',
     IP: '156,534 IPs',
   },
   {
@@ -33,28 +33,28 @@ const Regions = [
     IP: '2,704,625 IPs',
   },
   {
-    img: 'UnitedStates.svg',
-    country: 'United States',
+    img: 'BRA.svg',
+    country: 'Brazil',
     IP: '3,599,080 IPs',
   },
   {
-    img: 'Japan.svg',
-    country: 'Janpan',
+    img: 'DEU.svg',
+    country: 'Germany',
     IP: '156,534 IPs',
   },
   {
-    img: 'SouthKorea.svg',
-    country: 'South Korea',
+    img: 'FRA.svg',
+    country: 'France',
     IP: '1,047,582 IPs',
   },
   {
-    img: 'Myanmar.svg',
-    country: 'Myanmar',
+    img: 'GBR.svg',
+    country: 'United Kingdom',
     IP: '1,124,725 IPs',
   },
   {
-    img: 'Canada.svg',
-    country: 'Canada',
+    img: 'MEX.svg',
+    country: 'Mexico',
     IP: '2,704,625 IPs',
   },
 ]
@@ -77,7 +77,7 @@ const Index = () => {
             </div>
           </MainSection>
         </div>
-        <div className='flex justify-around mt-24'>
+        <div className='grid grid-cols-4 gap-y-10 mt-24 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center '>
           <Card
             icon='/assets/images/Profile.svg'
             desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
@@ -99,7 +99,7 @@ const Index = () => {
             title='100% White-Listed'
           />
         </div>
-
+        <div className='mt-8'></div>
         <div>
           <Section
             subHeading='Choose Proxy Proxy'
@@ -109,6 +109,7 @@ const Index = () => {
             image={'/assets/images/Shield.svg'}
           />
         </div>
+        <div className='mt-8'></div>
         <div>
           <Section
             subHeading='Residential Proxy Network'
@@ -120,16 +121,18 @@ const Index = () => {
           />
         </div>
 
-        <div className='flex flex-col items-center my-10'>
-          <div className='text-5xl'>Top 10 proxy regions</div>
-          <div className='grid grid-cols-5 gap-y-10 gap-x-40 mt-20'>
+        <div className='my-10'>
+          <div className='flex justify-center'>
+            <div className='text-5xl'>Top 10 proxy regions</div>
+          </div>
+          <div className='grid grid-cols-5 gap-y-10 gap-x-20 mt-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
             {Regions.map((R, index) => (
               <Region IP={R.IP} key={index} country={R.country} icon={`/assets/images/${R.img}`} />
             ))}
           </div>
         </div>
 
-        <div className='mt-5 -mx-20'>
+        <div className='mt-5'>
           <DownloadBanner />
         </div>
       </Body>

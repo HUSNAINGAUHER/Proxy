@@ -14,7 +14,7 @@ type Props = {
 export const MainSection = ({ children, desc, heading, image, subHeading }: Props) => {
   return (
     <>
-      <div className='grid grid-cols-2 mx-16 gap-20'>
+      <div className='grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1'>
         <div className='self-center'>
           <p className='text-2xl whitespace-pre-line'>{subHeading}</p>
           <p className='text-6xl whitespace-pre-line'>{heading}</p>
@@ -46,19 +46,21 @@ export const Section = ({
 }: Props) => {
   return (
     <>
-      <div className={`flex ${reverse ? 'flex-row-reverse' : 'flex-row'} mx-16 gap-20`}>
-        <div className='self-center flex-1'>
-          <p className='text-2xl text-blue-200 whitespace-pre-line'>{subHeading}</p>
+      <div
+        className={`grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1 `}
+      >
+        <div className={`self-center ${reverse && 'order-last'}`}>
+          <p className='text-xl text-blue-200 whitespace-pre-line'>{subHeading}</p>
           <p className='text-3xl whitespace-pre-line'>{heading}</p>
           <p className='mt-8 whitespace-pre-line'>{desc}</p>
           <p className='mt-8 whitespace-pre-line'>{desc2}</p>
 
           <div>{children}</div>
         </div>
-        <div className={`flex-1 flex items-center ${reverse ? 'justify-start' : 'justify-end'}`}>
+        <div className={` flex items-center justify-center`}>
           <Image
             src={image}
-            style={{ width: '70%', height: '70%' }}
+            style={{ width: '450px', height: '380px' }}
             height={100}
             width={100}
             alt='Brain Skill'
