@@ -123,8 +123,8 @@ const Index = () => {
         <div className='flex flex-col items-center my-10'>
           <div className='text-5xl'>Top 10 proxy regions</div>
           <div className='grid grid-cols-5 gap-y-10 gap-x-40 mt-20'>
-            {Regions.map((R) => (
-              <Region IP={R.IP} country={R.country} icon={`/assets/images/${R.img}`} />
+            {Regions.map((R, index) => (
+              <Region IP={R.IP} key={index} country={R.country} icon={`/assets/images/${R.img}`} />
             ))}
           </div>
         </div>

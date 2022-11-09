@@ -71,9 +71,9 @@ const ListItem = ({ heading, links }: ListItemProps) => {
     <div className='p-5'>
       <div className='text-xl'>{heading}</div>
       <div className='flex flex-col'>
-        {links.map((link) => {
+        {links.map((link, index) => {
           return (
-            <a style={{ color: '#1AFFF8' }} className='mt-3' href={link.link}>
+            <a style={{ color: '#1AFFF8' }} key={index} className='mt-3' href={link.link}>
               {link.name}
             </a>
           )
