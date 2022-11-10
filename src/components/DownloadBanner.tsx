@@ -1,20 +1,20 @@
 import Image from 'next/image'
 
 export const DownloadBanner = () => {
-  
   return (
-    <div
-      className='flex justify-between flex-wrap px-24 py-4 gap-y-10'
-      style={{ backgroundColor: '#00100F' }}
-    >
-      <div className='text-xl'>Download the IP Changer App For Windows</div>
-      <Image
-        src={'/assets/images/WinIcon.svg'}
-        width={133}
-        height={41}
-        alt={'Window Download Button'}
-      />
-     
+    <div style={{ backgroundColor: '#00100F' }}>
+      <div
+        className='flex justify-between flex-wrap px-24 py-4 gap-y-10 mx-auto'
+        style={{ maxWidth: '1350px' }}
+      >
+        <div className='text-xl'>Download the IP Changer App For Windows</div>
+        <Image
+          src={'/assets/images/WinIcon.svg'}
+          width={133}
+          height={41}
+          alt={'Window Download Button'}
+        />
+      </div>
     </div>
   )
 }
@@ -22,8 +22,6 @@ type Props = {
   list: { icon: string; text: string }[]
 }
 export const IconList = ({ list }: Props) => {
-
-  console.log(list)
   return (
     <>
       {list.map((R) => {

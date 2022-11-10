@@ -1,6 +1,5 @@
 import { PrimaryButton } from '@/components/Buttons/Button'
 import { Card } from '@/components/Cards/Card'
-import { DownloadBanner } from '@/components/DownloadBanner'
 import { Region } from '@/components/Regions'
 import { MainSection, Section } from '@/components/Section'
 import { Body } from '@/layouts/Body'
@@ -130,10 +129,6 @@ const Index = () => {
               <Region IP={R.IP} key={index} country={R.country} icon={`/assets/images/${R.img}`} />
             ))}
           </div>
-        </div>
-
-        <div className='mt-5'>
-          <DownloadBanner />
         </div>
       </Body>
     </>

@@ -1,3 +1,4 @@
+import { DownloadBanner } from '@/components/DownloadBanner'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
@@ -24,10 +25,11 @@ export const Footer = () => {
   ]
 
   return (
-    <div style={{ backgroundColor: '#011F1E' }}>
+    <div style={{ backgroundColor: '#011F1E' }} className='relative mt-20'>
+      <DownloadBanner />
       <div
-        className='flex flex-wrap justify-between  sm:justify-center xs:justify-center lg:justify-between py-20'
-        style={{ marginLeft: '69px', maxWidth: '1350px', width: '100%', margin: '0 auto' }}
+        className='flex flex-wrap sm:justify-center xs:justify-center lg:justify-between py-20 mx-auto'
+        style={{ maxWidth: '1350px', width: '100%', margin: '0 auto' }}
       >
         <div className='w-80'>
           <Image

@@ -6,6 +6,7 @@ type Props = {
   ghost?: boolean
   color?: string
   showArrow?: boolean
+  full?: boolean
 }
 
 export const Button = ({ onClick, text, ghost = false }: Props) => {
@@ -21,15 +22,15 @@ export const Button = ({ onClick, text, ghost = false }: Props) => {
   )
 }
 
-export const PrimaryButton = ({ onClick, text, ghost = false, showArrow }: Props) => {
+export const PrimaryButton = ({ onClick, text, ghost = false, showArrow, full }: Props) => {
   return (
     <a
       onClick={onClick}
       className={`border-blue-200 border rounded px-6 py-2 ${
         ghost ? 'text-blue-200' : 'text-black'
-      } ${
-        ghost ? 'bg-transparent' : 'bg-blue-200'
-      } cursor-pointer flex w-max justify-between gap-x-5`}
+      } ${ghost ? 'bg-transparent' : 'bg-blue-200'} cursor-pointer flex ${
+        full ? 'w-full ' : 'w-max'
+      } ${full ? 'justify-center' : 'justify-between' } gap-x-5`}
     >
       {text}
       {showArrow && <Image src='/assets/images/Arrow.svg' height={10} width={20} alt='' />}
