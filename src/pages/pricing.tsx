@@ -1,7 +1,7 @@
 import { PrimaryButton } from '@/components/Buttons/Button'
 import { GroupButton } from '@/components/Buttons/GroupButton'
 import { PricingCard } from '@/components/Cards/PricingCard'
-import { DownloadBanner, IconList } from '@/components/DownloadBanner'
+import { IconList } from '@/components/DownloadBanner'
 import { DropDown } from '@/components/DropDown'
 import { TextField } from '@/components/TextFiled'
 import { Body } from '@/layouts/Body'
