@@ -20,7 +20,7 @@ export const Header = () => {
   }, [open])
   return (
     <>
-      <div className='sm:hidden md:block'>
+      <div className='xs:hidden md:block'>
         <div
           className='flex justify-between align-center py-4'
           style={{ maxWidth: '1350px', width: '100%', margin: '0 auto', visibility: 'visible' }}
@@ -75,7 +75,7 @@ export const Header = () => {
             </svg>
           </div>
 
-          <div className='flex flex-col gap-y-10 items-center justify-center my-40'>
+          <div className='flex flex-col gap-y-10 items-center justify-center my-10'>
             {Routes.map((R, index) => (
               <a
                 key={index}
