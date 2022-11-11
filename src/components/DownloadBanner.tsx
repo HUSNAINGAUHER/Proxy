@@ -4,7 +4,7 @@ export const DownloadBanner = () => {
   return (
     <div style={{ backgroundColor: '#00100F' }}>
       <div
-        className='flex justify-between flex-wrap py-4 gap-y-10 mx-auto'
+        className='flex sm:justify-between xs:justify-center flex-wrap py-4 gap-y-10 mx-auto'
         style={{ maxWidth: '1350px' }}
       >
         <>

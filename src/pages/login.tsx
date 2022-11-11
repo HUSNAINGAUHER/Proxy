@@ -24,7 +24,7 @@ const Login = () => {
 
         <div
           style={{ backgroundColor: '#252525' }}
-          className='w-max xs:px-10 md:px-32 py-20 border-t-4 rounded-lg border-blue-200 md:mx-auto'
+          className='w-max xs:px-10 md:px-32 py-20 border-t-4 rounded-lg border-blue-200 mx-auto'
         >
           <div className='flex flex-col flex-wrap gap-y-5'>
             <TextField label='Enter Your email address:' onChange={() => {}} />
