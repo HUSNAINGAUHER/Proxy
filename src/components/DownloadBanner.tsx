@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export const DownloadBanner = () => {
+  const { push } = useRouter()
+
   return (
     <div style={{ backgroundColor: '#00100F' }}>
       <div
@@ -10,6 +13,9 @@ export const DownloadBanner = () => {
         <>
           <div className='text-xl'>Download the IP Changer App For Windows</div>
           <Image
+            onClick={() => {
+              push('download')
+            }}
             src={'/assets/images/WinIcon.svg'}
             width={133}
             height={41}

@@ -1,8 +1,10 @@
 import { PrimaryButton } from '@/components/Buttons/Button'
 import { TextField } from '@/components/TextFiled'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const Login = () => {
+  const { push } = useRouter()
   return (
     <>
       <div style={{ position: 'absolute', width: '100%' }}>
@@ -32,7 +34,7 @@ const Login = () => {
           </div>
 
           <div className='mt-7 flex items-center gap-x-2'>
-            <PrimaryButton text='Continue' />
+            <PrimaryButton text='Continue' onClick={() => push('/')} />
             <div className='text-sm'>
               New Here? <a>Create an Account</a>
             </div>

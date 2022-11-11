@@ -14,31 +14,32 @@ export const Header = () => {
     const element = document.getElementsByTagName('body')[0]
     if (open) {
       element?.setAttribute('style', 'overflow:hidden')
-    }
-    else {
+    } else {
       element?.setAttribute('style', 'overflow:shown')
     }
   }, [open])
   return (
     <>
-      <div
-        className='flex flex-wrap justify-between align-center py-4 xs:hidden md:visible'
-        style={{ maxWidth: '1350px', width: '100%', margin: '0 auto' }}
-      >
-        <Image alt='logo' src='/assets/images/Logo.svg' width={172} height={36} />
-        <div className='flex-row flex-wrap flex justify-between gap-x-16 align-center'>
-          {Routes.map((R, index) => (
-            <a
-              key={index}
-              className='self-center text-white hover:text-blue-200 cursor-pointer'
-              onClick={() => push(R)}
-            >
-              {R.toUpperCase()}
-            </a>
-          ))}
-          <div className='flex-row flex justify-between gap-x-4'>
-            <Button ghost={true} text='LOGIN' onClick={() => push('login')} />
-            <Button text='SIGNUP' onClick={() => push('signup')} />
+      <div className='sm:hidden md:block'>
+        <div
+          className='flex justify-between align-center py-4'
+          style={{ maxWidth: '1350px', width: '100%', margin: '0 auto', visibility: 'visible' }}
+        >
+          <Image alt='logo' src='/assets/images/Logo.svg' width={172} height={36} />
+          <div className='flex-row  flex justify-between gap-x-16 align-center'>
+            {Routes.map((R, index) => (
+              <a
+                key={index}
+                className='self-center text-white hover:text-blue-200 cursor-pointer'
+                onClick={() => push(R)}
+              >
+                {R.toUpperCase()}
+              </a>
+            ))}
+            <div className='flex-row flex justify-between gap-x-4'>
+              <Button ghost={true} text='LOGIN' onClick={() => push('login')} />
+              <Button text='SIGNUP' onClick={() => push('signup')} />
+            </div>
           </div>
         </div>
       </div>
@@ -57,7 +58,10 @@ export const Header = () => {
           </div>
         </div>
 
-        <div className={`fixed w-full h-full bg-black ${open ? 'visible' : 'hidden'}`} style={{zIndex:10}}>
+        <div
+          className={`fixed w-full h-full bg-black ${open ? 'visible' : 'hidden'}`}
+          style={{ zIndex: 10 }}
+        >
           <div className='flex justify-end px-5 py-5' onClick={() => setOpen(false)}>
             <svg
               xmlns='http://www.w3.org/2000/svg'

@@ -19,7 +19,7 @@ const Index = () => {
           >
             <div className='mt-10 flex gap-8'>
               <PrimaryButton text='DOWNLOAD' onClick={() => push('/download')} />
-              <PrimaryButton ghost text='LOCATIONS' onClick={() => push('/location')} />
+              <PrimaryButton ghost text='LOCATIONS' onClick={() => push('/locations')} />
             </div>
           </MainSection>
         </div>

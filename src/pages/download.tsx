@@ -24,7 +24,7 @@ const Download = () => {
             <PrimaryButton
               text='View Locations'
               onClick={() => {
-                push('location')
+                push('locations')
               }}
               showArrow
             />
