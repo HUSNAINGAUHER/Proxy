@@ -179,7 +179,6 @@ const Pricing = () => {
     ],
   }
 
-
   const GetSelectedPkg = () => {
     if (selected in pricingCards) {
       const d = pricingCards[selected]?.at(selectedIndex)
@@ -205,7 +204,7 @@ const Pricing = () => {
         <GroupButton items={plans} selected={selected} setSelected={setSelected} />
       </div>
 
-      <div className='grid grid-cols-5 gap-x-10 mt-20'>
+      <div className='grid grid-cols-5 gap-y-5 gap-x-10 mt-20 grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 place-items-center xs:grid-cols-1 '>
         {pricingCards[selected]?.map((c, index) => {
           return (
             <PricingCard
@@ -221,9 +220,9 @@ const Pricing = () => {
         })}
       </div>
 
-      <div className='grid grid-cols-2 mt-20'>
-        <div className='grid grid-cols-2 gap-x-20'>
-          <div className='flex flex-col'>
+      <div className='grid grid-cols-2 xs:grid-cols-1 md:grid-cols-2 mt-20'>
+        <div className='grid grid-cols-2 grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-20'>
+          <div className='flex flex-col items-start xs:items-center md:items-start '>
             <IconList
               list={[
                 { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
@@ -233,7 +232,7 @@ const Pricing = () => {
             />
           </div>
 
-          <div className='flex flex-col'>
+          <div className='flex flex-col items-start xs:items-center md:items-start xs:mt-10 md:mt-0'>
             <IconList
               list={[
                 { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
@@ -243,7 +242,7 @@ const Pricing = () => {
             />
           </div>
         </div>
-        <div className='flex flex-col items-end gap-y-5'>
+        <div className='flex flex-col items-end xs:items-center md:items-end  gap-y-5 xs:mt-20 md:mt-0'>
           <div style={{ fontSize: '16px' }}>Get a coupon</div>
           <div style={{ fontSize: '16px' }}>
             You need to pay:
@@ -326,7 +325,7 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div className='flex flex-wrap gap-x-10' style={{ marginTop: '33px' }}>
+          <div className='flex flex-wrap gap-x-10 ' style={{ marginTop: '33px', width:'100%' }}>
             <TextField label='Enter Your email address:' onChange={() => {}} />
             <TextField label='Enter Your Password:' onChange={() => {}} />
           </div>

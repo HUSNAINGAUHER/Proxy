@@ -18,13 +18,13 @@ const Login = () => {
       <div className='mt-20 relative'>
         <div className='flex flex-col items-center justify-center my-10'>
           <Image alt='logo' src='/assets/images/Logo.svg' width={172} height={36} />
-          <div className='text-6xl'>Account Login</div>
+          <div className='text-6xl text-center'>Account Login</div>
           <div className='text-xl'>Welcome back to the Proxy!</div>
         </div>
 
         <div
           style={{ backgroundColor: '#252525' }}
-          className='w-max px-32 py-20 border-t-4 rounded-lg border-blue-200 mx-auto'
+          className='w-max xs:px-10 md:px-32 py-20 border-t-4 rounded-lg border-blue-200 md:mx-auto'
         >
           <div className='flex flex-col flex-wrap gap-y-5'>
             <TextField label='Enter Your email address:' onChange={() => {}} />

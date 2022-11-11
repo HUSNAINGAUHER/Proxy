@@ -14,7 +14,7 @@ export const PricingCard = ({ IPs, Price, Selected, Save, onClick }: Props) => {
     <div
       onClick={onClick}
       className='flex flex-col relative border-blue-200 border rounded items-center py-5 px-9 w-50 hover:border-white cursor-pointer hover:bg-blue-100'
-      style={{ backgroundColor: Selected ? '#093C3A' : '#0D0D0D' }}
+      style={{ backgroundColor: Selected ? '#093C3A' : '#0D0D0D', maxWidth:'216px', minWidth:'200px' }}
     >
       {Save && (
         <div

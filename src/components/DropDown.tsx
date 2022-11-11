@@ -19,7 +19,7 @@ export const DropDown = ({ items, onChange }: Props) => {
         style={{
           backgroundColor: '#0D0D0D',
           width: '100%',
-          minWidth: '230px',
+          maxWidth: '220px',
         }}
         onClick={() => setOpen(!isOpen)}
         type='button'
