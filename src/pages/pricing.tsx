@@ -179,7 +179,6 @@ const Pricing = () => {
     ],
   }
 
-  const SelectedPkg = selected in pricingCards ? pricingCards[selected] : []
 
   const GetSelectedPkg = () => {
     if (selected in pricingCards) {
