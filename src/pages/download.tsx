@@ -9,18 +9,18 @@ const Download = () => {
   return (
     <>
       <Body>
-        <div className='mt-10'>
+        <div style={{ marginTop: '174px' }}>
           <WindowClientBanner />
         </div>
 
-        <div className='flex flex-col items-center mt-20'>
-          <div className='text-5xl text-center'>
+        <div className='flex flex-col items-center' style={{ marginTop: '266px' }}>
+          <div className='text-center' style={{ fontSize: '45px', lineHeight: '63.19px' }}>
             Our S5 Proxy has a very large <br /> residential proxy pool
           </div>
-          <div className='text-center mt-5'>
+          <div className='text-center' style={{ fontSize: '16px', marginTop: '20px' }}>
             Proxies from up to 180 countries around the world, over 50 million residential IPs
           </div>
-          <div className='mx-auto mt-5'>
+          <div className='mx-auto' style={{ marginTop: '30px' }}>
             <PrimaryButton
               text='View Locations'
               onClick={() => {
@@ -42,13 +42,13 @@ const Download = () => {
         </div>
 
         <div className='flex flex-col items-center my-20'>
-          <div className='text-5xl text-center'>
+          <div className='text-center' style={{ fontSize: '45px', lineHeight: '63.19px' }}>
             Choose the right plan that fits <br /> your business.
           </div>
-          <div className='text-center mt-5'>
+          <div className='text-center' style={{ fontSize: '16px', marginTop: '20px' }}>
             View our Pricing Packages adjusted to your budget and use!
           </div>
-          <div className='mx-auto mt-5'>
+          <div className='mx-auto' style={{ marginTop: '30px' }}>
             <PrimaryButton
               text='View Pricing'
               onClick={() => {

@@ -22,10 +22,14 @@ export const WindowClientBanner = () => {
     <>
       <div className='grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1'>
         <div className='self-center'>
-          <p className='text-2xl whitespace-pre-line'>Your PC Install is ready!</p>
-          <p className='text-6xl whitespace-pre-line mt-5'>Windows client</p>
+          <p className='whitespace-pre-line' style={{ fontSize: '24px' }}>
+            Your PC Install is ready!
+          </p>
+          <p className='whitespace-pre-line' style={{ fontSize: '64px' , lineHeight:'90px'}}>
+            Windows client
+          </p>
           <IconList list={list} />
-          <div className='mt-4'>
+          <div style={{marginTop:'43px'}}>
             <WindowDownloadButton version='Version 1.45' />
           </div>
         </div>

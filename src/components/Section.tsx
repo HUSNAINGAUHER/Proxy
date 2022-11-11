@@ -17,9 +17,16 @@ export const MainSection = ({ children, desc, heading, image, subHeading }: Prop
       <div className='grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1'>
         <div className='self-center'>
           <p className='text-2xl whitespace-pre-line'>{subHeading}</p>
-          <p className='text-6xl whitespace-pre-line'>{heading}</p>
-          <p className='text-2xl mt-8 whitespace-pre-line'>{desc}</p>
-          <div>{children}</div>
+          <p className='text-6xl whitespace-pre-line' style={{ marginTop: '11px' }}>
+            {heading}
+          </p>
+          <p
+            className='mt-8 whitespace-pre-line text-2xl'
+            style={{ marginTop: '34px', fontSize: '16px' }}
+          >
+            {desc}
+          </p>
+          <div style={{ marginTop: '32px' }}>{children}</div>
         </div>
         <div>
           <Image
@@ -50,10 +57,18 @@ export const Section = ({
         className={`grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1 `}
       >
         <div className={`self-center ${reverse && 'order-last'}`}>
-          <p className='text-xl text-blue-200 whitespace-pre-line'>{subHeading}</p>
-          <p className='text-3xl whitespace-pre-line'>{heading}</p>
-          <p className='mt-8 whitespace-pre-line'>{desc}</p>
-          <p className='mt-8 whitespace-pre-line'>{desc2}</p>
+          <p className='text-xl text-blue-200 whitespace-pre-line' style={{ fontSize: '20px' }}>
+            {subHeading}
+          </p>
+          <p className='text-3xl whitespace-pre-line' style={{ fontSize: '35px' }}>
+            {heading}
+          </p>
+          <p className='mt-8 whitespace-pre-line' style={{ fontSize: '16px' }}>
+            {desc}
+          </p>
+          <p className='mt-8 whitespace-pre-line' style={{ fontSize: '16px' }}>
+            {desc2}
+          </p>
 
           <div>{children}</div>
         </div>

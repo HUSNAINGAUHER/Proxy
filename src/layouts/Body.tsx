@@ -13,8 +13,9 @@ export const Body = ({ children, backgroud }: Props) => {
     <div>
       <Header />
       {backgroud && (
-        <div style={{ position: 'absolute', width: '100%' }}>
+        <div style={{ position: 'absolute', width: '100%' , pointerEvents:'none'}}>
           <Image
+            style={{ zIndex: 1 }}
             src={'/assets/images/BackPricing.svg'}
             width={'100'}
             height={'100'}
@@ -23,7 +24,10 @@ export const Body = ({ children, backgroud }: Props) => {
           />
         </div>
       )}
-      <div style={{ maxWidth: '1350px', width: '100%', margin: '0 auto' }} className='xs:px-10'>
+      <div
+        style={{ maxWidth: '1350px', width: '100%', margin: '0 auto', zIndex: 20 }}
+        className='xs:px-10 lg:px-0'
+      >
         {children}
       </div>
       <Footer />

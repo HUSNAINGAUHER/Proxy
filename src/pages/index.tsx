@@ -63,7 +63,7 @@ const Index = () => {
   return (
     <>
       <Body>
-        <div className='mt-24'>
+        <div style={{ marginTop: '136px' }}>
           <MainSection
             desc={`The Proxy S5 is 1:1 compatible with 911 S5 functions and surpasses the 911 S5's Residential Proxy Service.`}
             heading='The Proxy - Perfect 911s5 Alternatives'
@@ -76,7 +76,10 @@ const Index = () => {
             </div>
           </MainSection>
         </div>
-        <div className='grid grid-cols-4 gap-y-10 mt-24 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center '>
+        <div
+          className='grid grid-cols-4 gap-y-10 mt-24 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center '
+          style={{ marginTop: '128px' }}
+        >
           <Card
             icon='/assets/images/Profile.svg'
             desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
@@ -98,8 +101,8 @@ const Index = () => {
             title='100% White-Listed'
           />
         </div>
-        <div className='mt-8'></div>
-        <div>
+
+        <div style={{ marginTop: '187px' }}>
           <Section
             subHeading='Choose Proxy Proxy'
             heading='Looking for a 911 S5 alternative?'
@@ -108,8 +111,7 @@ const Index = () => {
             image={'/assets/images/Shield.svg'}
           />
         </div>
-        <div className='mt-8'></div>
-        <div>
+        <div style={{ marginTop: '210px' }}>
           <Section
             subHeading='Residential Proxy Network'
             heading='Residential Proxy Network'
@@ -120,9 +122,9 @@ const Index = () => {
           />
         </div>
 
-        <div className='my-10'>
+        <div className='mt-20'>
           <div className='flex justify-center'>
-            <div className='text-5xl'>Top 10 proxy regions</div>
+            <div style={{fontSize:'45px'}}>Top 10 proxy regions</div>
           </div>
           <div className='grid grid-cols-5 gap-y-10 gap-x-20 mt-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
             {Regions.map((R, index) => (

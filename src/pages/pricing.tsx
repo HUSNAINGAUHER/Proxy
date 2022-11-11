@@ -6,8 +6,22 @@ import { DropDown } from '@/components/DropDown'
 import { TextField } from '@/components/TextFiled'
 import { Body } from '@/layouts/Body'
 import Image from 'next/image'
+import { useState } from 'react'
+
+type PricingItem = {
+  IPS: number
+  Price: number
+  Save?: { color: string; per: number }
+}
+
+type PricingList = {
+  [key: string]: PricingItem[]
+}
 
 const Pricing = () => {
+  const [selected, setSelected] = useState('1')
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
   const plans = [
     {
       key: '1',
@@ -20,10 +34,6 @@ const Pricing = () => {
       icon: '/assets/images/Fire.svg',
     },
     {
-      key: '2',
-      text: 'Enterprise Plan',
-    },
-    {
       key: '3',
       text: 'Static Plan',
     },
@@ -31,62 +41,182 @@ const Pricing = () => {
       key: '4',
       text: 'Unlimited Plan',
     },
+    {
+      key: '5',
+      text: 'Enterprise Plan',
+    },
   ]
 
-  const pricingCards = [
-    {
-      IPS: '150',
-      Price: '0.58',
-      Total: '87',
-      Selected: true,
-    },
-    {
-      IPS: '150',
-      Price: '0.58',
-      Total: '87',
-    },
-    {
-      IPS: '150',
-      Price: '0.58',
-      Total: '87',
-    },
-    {
-      IPS: '150',
-      Price: '0.58',
-      Total: '87',
-      Save: { color: '#4AD918', per: 36 },
-    },
-    {
-      IPS: '150',
-      Price: '0.58',
-      Total: '87',
-      Save: { color: '#FFDA44', per: 80 },
-    },
-  ]
+  const pricingCards: PricingList = {
+    '1': [
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+        Save: { color: '#4AD918', per: 36 },
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+
+        Save: { color: '#FFDA44', per: 80 },
+      },
+    ],
+    '2': [
+      {
+        IPS: 200,
+        Price: 0.58,
+      },
+      {
+        IPS: 200,
+        Price: 0.58,
+      },
+      {
+        IPS: 200,
+        Price: 0.58,
+      },
+      {
+        IPS: 200,
+        Price: 0.58,
+
+        Save: { color: '#4AD918', per: 36 },
+      },
+      {
+        IPS: 200,
+        Price: 0.58,
+
+        Save: { color: '#FFDA44', per: 80 },
+      },
+    ],
+    '3': [
+      {
+        IPS: 300,
+        Price: 0.58,
+      },
+      {
+        IPS: 200,
+        Price: 0.58,
+      },
+      {
+        IPS: 300,
+        Price: 0.58,
+      },
+      {
+        IPS: 300,
+        Price: 0.58,
+
+        Save: { color: '#4AD918', per: 36 },
+      },
+      {
+        IPS: 300,
+        Price: 0.58,
+
+        Save: { color: '#FFDA44', per: 80 },
+      },
+    ],
+    '4': [
+      {
+        IPS: 400,
+        Price: 0.58,
+      },
+      {
+        IPS: 400,
+        Price: 0.58,
+      },
+      {
+        IPS: 400,
+        Price: 0.58,
+      },
+      {
+        IPS: 400,
+        Price: 0.58,
+
+        Save: { color: '#4AD918', per: 36 },
+      },
+      {
+        IPS: 500,
+        Price: 0.58,
+
+        Save: { color: '#FFDA44', per: 80 },
+      },
+    ],
+    '5': [
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+
+        Save: { color: '#4AD918', per: 36 },
+      },
+      {
+        IPS: 150,
+        Price: 0.58,
+
+        Save: { color: '#FFDA44', per: 80 },
+      },
+    ],
+  }
+
+  const SelectedPkg = selected in pricingCards ? pricingCards[selected] : []
+
+  const GetSelectedPkg = () => {
+    if (selected in pricingCards) {
+      const d = pricingCards[selected]?.at(selectedIndex)
+      if (d) return d
+    }
+
+    return { IPS: 0, Price: 0 }
+  }
 
   return (
     <Body backgroud>
       <div className='flex flex-col items-center my-20'>
-        <div className='text-5xl text-center'>
+        <div className='text-center' style={{ fontSize: '45px' }}>
           Choose the right plan that fits <br /> your
-          <span className='text-blue-200'>business.</span>
+          <span className='text-blue-200'> business.</span>
         </div>
-        <div className='text-center mt-5'>Choose the plan which fits your budget!</div>
+        <div className='text-center' style={{ fontSize: '16px', marginTop: '35px' }}>
+          Choose the plan which fits your budget!
+        </div>
       </div>
 
       <div className='flex justify-center'>
-        <GroupButton items={plans} />
+        <GroupButton items={plans} selected={selected} setSelected={setSelected} />
       </div>
 
       <div className='grid grid-cols-5 gap-x-10 mt-20'>
-        {pricingCards.map((c) => {
+        {pricingCards[selected]?.map((c, index) => {
           return (
             <PricingCard
               IPs={c.IPS}
               Price={c.Price}
-              Total={c.Total}
-              Selected={c.Selected}
               Save={c.Save}
+              Selected={index === selectedIndex}
+              onClick={() => {
+                setSelectedIndex(index)
+              }}
             />
           )
         })}
@@ -115,12 +245,17 @@ const Pricing = () => {
           </div>
         </div>
         <div className='flex flex-col items-end gap-y-5'>
-          <div>Get a coupon</div>
-          <div>
-            You need to pay: <span className='text-lg font-bold'>$60</span>
+          <div style={{ fontSize: '16px' }}>Get a coupon</div>
+          <div style={{ fontSize: '16px' }}>
+            You need to pay:
+            <span style={{ fontSize: '20px' }} className='font-bold'>
+              {(GetSelectedPkg().IPS * GetSelectedPkg().Price).toFixed(2)}
+            </span>
           </div>
           <div className='w-max'>
-            <PrimaryButton text='Buy Now' full />
+            <div style={{ width: '220px', height: '51px' }}>
+              <PrimaryButton text='Buy Now' full />
+            </div>
             <div className='flex gap-8 mt-5'>
               <div className='flex gap-2'>
                 <Image
@@ -144,56 +279,78 @@ const Pricing = () => {
       <div className='mt-20'>
         <div className='text-2xl'> Proceed to payment using Credit Card </div>
         <div
-          style={{ backgroundColor: '#252525' }}
-          className='w-full p-20 border-t-4 rounded-sm border-blue-200'
+          style={{ backgroundColor: '#252525', padding: '34px 33px 20px 33px' }}
+          className='w-full border-t-4 rounded-sm border-blue-200'
         >
           <div className='flex items-center justify-between'>
             <DropDown
-              items={[
-                { key: '1', val: '20 IPs ($3.00/IP)' },
-                { key: '2', val: '21 IPs ($3.00/IP)' },
-              ]}
+              items={pricingCards[selected]?.map((c, index) => {
+                return {
+                  key: index.toString(),
+                  val: c.IPS.toString(),
+                  extra: c.Price.toString() + '/IP',
+                }
+              })}
+              onChange={(val: number) => setSelectedIndex(val)}
             />
-            <div className='font-bold'>$60.00</div>
+            <div className='font-bold'>
+              {(GetSelectedPkg().IPS * GetSelectedPkg().Price).toFixed(2)}
+            </div>
           </div>
           <div
-            style={{ backgroundColor: '#1B1B1B' }}
+            style={{
+              backgroundColor: '#1B1B1B',
+              height: '60px',
+              fontSize: '20px',
+              marginTop: '37px',
+            }}
             className='flex items-center justify-between py-2 px-5 mt-10 rounded'
           >
-            <div className='font-bold text-lg'>Fee(5%):</div>
-            <div className='font-bold text-lg'>$3.00</div>
-          </div>
+            <div className='font-bold '>Fee(5%):</div>
 
-          <div className='flex justify-between items-center mt-10'>
-            <div>
-              <div className='font-bold text-lg'>Order Total:</div>
-              <div>The service is based on non-subscription.there will be no renewal.</div>
+            <div className='font-bold '>
+              ${(GetSelectedPkg().IPS * GetSelectedPkg().Price * 0.03).toFixed(2)}
             </div>
-            <div className='text-3xl text-blue-200'>$63.00</div>
           </div>
 
-          <div className='flex flex-wrap gap-x-10 mt-10'>
+          <div className='flex justify-between items-center' style={{ marginTop: '35px' }}>
+            <div>
+              <div className='font-bold ' style={{ fontSize: '20px' }}>
+                Order Total:
+              </div>
+              <div style={{ fontSize: '16px' }}>
+                The service is based on non-subscription.there will be no renewal.
+              </div>
+            </div>
+            <div style={{ fontSize: '36px' }} className='text-blue-200'>
+              ${(GetSelectedPkg().IPS * GetSelectedPkg().Price * 1.03).toFixed(2)}
+            </div>
+          </div>
+
+          <div className='flex flex-wrap gap-x-10' style={{ marginTop: '33px' }}>
             <TextField label='Enter Your email address:' onChange={() => {}} />
             <TextField label='Enter Your Password:' onChange={() => {}} />
           </div>
 
-          <div className='mt-10'>
-            <div className='text-sm'>
+          <div style={{ marginTop: '21px' }}>
+            <div style={{ fontSize: '13px' }}>
               Your S5 Proxy account will be created when you enter your email.
             </div>
-            <div className='text-sm'>
+            <div style={{ fontSize: '13px' }}>
               Privacy guarantee: We do not share your information and will contact you only as
               needed to provide our service.
             </div>
-            <div className='text-lg mt-4'>Continue below to buy a Subscription with Other</div>
+            <div style={{ fontSize: '17px', marginTop: '9px' }}>
+              Continue below to buy a Subscription with Other
+            </div>
 
-            <div style={{ width: '200px' }} className='mt-5'>
+            <div style={{ width: '200px', marginTop: '30px' }}>
               <PrimaryButton text='Complete Purchase' full />
             </div>
 
-            <div className='text-sm mt-5'>
-              By submitting this form, you agree to our <a>Terms of Service</a> and{' '}
-              <a>Privacy Policy</a>
+            <div style={{ fontSize: '13px', marginTop: '17px' }}>
+              By submitting this form, you agree to our <a href='/terms'>Terms of Service</a> and{' '}
+              <a href='privacy_policy'>Privacy Policy</a>
             </div>
           </div>
         </div>

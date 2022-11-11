@@ -1,18 +1,19 @@
 type Props = {
-  IPs: string
-  Price: string
-  Total: string
+  IPs: number
+  Price: number
   Selected?: boolean
+  onClick?: () => void
   Save?: {
     per: number
     color: string
   }
 }
 
-export const PricingCard = ({ IPs, Price, Total, Selected, Save }: Props) => {
+export const PricingCard = ({ IPs, Price, Selected, Save, onClick }: Props) => {
   return (
     <div
-      className='flex flex-col relative border-blue-200 border rounded items-center py-8 px-9 w-50'
+      onClick={onClick}
+      className='flex flex-col relative border-blue-200 border rounded items-center py-5 px-9 w-50 hover:border-white cursor-pointer hover:bg-blue-100'
       style={{ backgroundColor: Selected ? '#093C3A' : '#0D0D0D' }}
     >
       {Save && (
@@ -29,12 +30,17 @@ export const PricingCard = ({ IPs, Price, Total, Selected, Save }: Props) => {
           </div>
         </div>
       )}
-      <div className='text-lg mt-2'>{IPs + ' IPS'}</div>
-      <div className='mt-2 text-2xl font-bold  text-blue-200'>
-        <span className='text-white'>$</span> {Price} <span>/IP</span>
+      <div style={{ fontSize: '18px' }}>{IPs + ' IPS'}</div>
+      <div className='font-bold  text-blue-200' style={{ fontSize: '35px', marginTop: '14px' }}>
+        <span className='text-white'>$</span> {Price} /{' '}
+        <span
+          style={{ fontSize: '18px', marginTop: '5px', marginLeft: '5px', position: 'absolute' }}
+        >
+          IP
+        </span>
       </div>
-      <div className='mt-2' style={{ color: 'rgba(255, 255, 255, 0.73)' }}>
-        {'Total: $' + Total}
+      <div style={{ color: 'rgba(255, 255, 255, 0.73)', fontSize: '14px', marginTop: '52px' }}>
+        {'Total: $' + (IPs * Price).toFixed(2)}
       </div>
     </div>
   )
