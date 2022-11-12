@@ -61,7 +61,7 @@ export const TopProxy = () => {
         </div>
       </div>
       <div
-        className='grid grid-cols-5 gap-y-10 gap-x-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'
+        className='grid grid-cols-5 gap-y-10 gap-x-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-start'
         style={{ marginTop: '94px' }}
       >
         {Regions.map((R, index) => (
@@ -82,7 +82,7 @@ export const ContinentProxy = ({ continent, Regions }: Props) => {
     <>
       <div style={{ fontSize: '20px', color: '#00DFD8' }}>{continent}</div>
       <div style={{ width: '100%', height: '1px', backgroundColor: '#00908C', marginTop:'4px' }}></div>
-      <div className='grid grid-cols-5 gap-y-10 gap-x-20 mt-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
+      <div className='grid grid-cols-5 gap-y-10 gap-x-20 mt-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ' >
         {Regions.map((R, index) => (
           <RegionContinent
             IP={R.IP}
