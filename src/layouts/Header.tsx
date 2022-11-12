@@ -3,7 +3,13 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-const Routes = ['home', 'locations', 'download', 'use cases', 'pricing']
+const Routes = [
+  { name: 'home', path: '/' },
+  { name: 'locations', path: '/locations' },
+  { name: 'download', path: '/download' },
+  { name: 'use cases', path: '/use_cases' },
+  { name: 'pricing', path: '/pricing' },
+]
 
 export const Header = () => {
   const { push } = useRouter()
@@ -31,9 +37,9 @@ export const Header = () => {
               <a
                 key={index}
                 className='self-center text-white hover:text-blue-200 cursor-pointer'
-                onClick={() => push(R)}
+                onClick={() => push(R.path)}
               >
-                {R.toUpperCase()}
+                {R.name.toUpperCase()}
               </a>
             ))}
             <div className='flex-row flex justify-between gap-x-4'>
@@ -80,9 +86,9 @@ export const Header = () => {
               <a
                 key={index}
                 className='self-center text-white text-xl hover:text-blue-200 cursor-pointer'
-                onClick={() => push(R)}
+                onClick={() => push(R.path)}
               >
-                {R.toUpperCase()}
+                {R.name.toUpperCase()}
               </a>
             ))}
 

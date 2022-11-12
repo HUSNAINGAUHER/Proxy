@@ -56,7 +56,9 @@ const Locations = () => {
   ]
   return (
     <Body>
-      <TopProxy />
+      <div style={{marginTop:'140px'}}>
+        <TopProxy />
+      </div>
       <div style={{ marginTop: '105px' }}>
         <div className='flex justify-center mb-5'>
           <div style={{ fontSize: '45px' }}>List of all countries</div>
