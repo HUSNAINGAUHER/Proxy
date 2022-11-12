@@ -56,7 +56,7 @@ export const Section = ({
       <div
         className={`grid grid-cols-2 gap-20 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xs:grid-cols-1 `}
       >
-        <div className={`self-center ${reverse && 'order-last'}`}>
+        <div className={` ${reverse && 'order-last'}`}>
           <p className='text-xl text-blue-200 whitespace-pre-line' style={{ fontSize: '20px' }}>
             {subHeading}
           </p>
@@ -72,7 +72,7 @@ export const Section = ({
 
           <div>{children}</div>
         </div>
-        <div className={` flex items-center justify-center`}>
+        <div className={` flex ${reverse ? 'justify-start' : 'justify-end'} `}>
           <Image
             src={image}
             style={{ width: '450px', height: '380px' }}

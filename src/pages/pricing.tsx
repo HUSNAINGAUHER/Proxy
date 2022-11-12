@@ -204,7 +204,7 @@ const Pricing = () => {
         <GroupButton items={plans} selected={selected} setSelected={setSelected} />
       </div>
 
-      <div className='grid grid-cols-5 gap-y-5 gap-x-10 mt-20 grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 place-items-center xs:grid-cols-1 '>
+      <div className='grid grid-cols-5 gap-y-5 gap-x-10 mt-20 grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 xs:place-items-center md:place-items-stretch xs:grid-cols-1 '>
         {pricingCards[selected]?.map((c, index) => {
           return (
             <PricingCard
@@ -221,49 +221,59 @@ const Pricing = () => {
       </div>
 
       <div className='grid grid-cols-2 xs:grid-cols-1 md:grid-cols-2 mt-20'>
-        <div className='grid grid-cols-2 grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-20'>
-          <div className='flex flex-col items-start xs:items-center md:items-start '>
-            <IconList
-              list={[
-                { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
-                { icon: '/assets/images/ShieldFront.svg', text: 'SOCKSS' },
-                { icon: '/assets/images/Bolt.svg', text: '99.9% Success rate' },
-              ]}
-            />
-          </div>
+        <div className='xs:hidden md:block'>
+          <div className='grid grid-cols-2 grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-20'>
+            <div className='flex flex-col items-start xs:items-center md:items-start '>
+              <IconList
+                list={[
+                  { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
+                  { icon: '/assets/images/ShieldFront.svg', text: 'SOCKSS' },
+                  { icon: '/assets/images/Bolt.svg', text: '99.9% Success rate' },
+                ]}
+              />
+            </div>
 
-          <div className='flex flex-col items-start xs:items-center md:items-start xs:mt-10 md:mt-0'>
-            <IconList
-              list={[
-                { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
-                { icon: '/assets/images/ShieldFront.svg', text: 'SOCKSS' },
-                { icon: '/assets/images/Bolt.svg', text: '99.9% Success rate' },
-              ]}
-            />
+            <div className='flex flex-col items-start xs:items-center md:items-start xs:mt-10 md:mt-0'>
+              <IconList
+                list={[
+                  { icon: '/assets/images/Globe.svg', text: 'Only US resourse' },
+                  { icon: '/assets/images/ShieldFront.svg', text: 'SOCKSS' },
+                  { icon: '/assets/images/Bolt.svg', text: '99.9% Success rate' },
+                ]}
+              />
+            </div>
           </div>
         </div>
-        <div className='flex flex-col items-end xs:items-center md:items-end  gap-y-5 xs:mt-20 md:mt-0'>
+        <div className='flex flex-col items-end xs:items-center md:items-end  gap-y-5 xs:mt-0 md:mt-0'>
           <div style={{ fontSize: '16px' }}>Get a coupon</div>
           <div style={{ fontSize: '16px' }}>
-            You need to pay:
+            You need to pay:{' '}
             <span style={{ fontSize: '20px' }} className='font-bold'>
-              {(GetSelectedPkg().IPS * GetSelectedPkg().Price).toFixed(2)}
+              $ {(GetSelectedPkg().IPS * GetSelectedPkg().Price).toFixed(2)}
             </span>
           </div>
           <div className='w-max'>
             <div style={{ width: '220px', height: '51px' }}>
               <PrimaryButton text='Buy Now' full />
             </div>
+
             <div className='flex gap-8 mt-5'>
-              <div className='flex gap-2'>
-                <Image
-                  src={'/assets/images/footer/mastercard.svg'}
-                  height={20}
-                  width={30}
-                  alt={''}
-                />
-                <Image src={'/assets/images/footer/visa.svg'} height={20} width={30} alt={''} />
-                <Image src={'/assets/images/footer/unionpay.svg'} height={20} width={30} alt={''} />
+              <div className='md:block'>
+                <div className='flex gap-2'>
+                  <Image
+                    src={'/assets/images/footer/mastercard.svg'}
+                    height={20}
+                    width={30}
+                    alt={''}
+                  />
+                  <Image src={'/assets/images/footer/visa.svg'} height={20} width={30} alt={''} />
+                  <Image
+                    src={'/assets/images/footer/unionpay.svg'}
+                    height={20}
+                    width={30}
+                    alt={''}
+                  />
+                </div>
               </div>
               <div className='flex gap-2'>
                 <Image src={'/assets/images/footer/trx.svg'} height={20} width={20} alt={''} />
@@ -277,7 +287,7 @@ const Pricing = () => {
       <div className='mt-20'>
         <div className='text-2xl'> Proceed to payment using Credit Card </div>
         <div
-          style={{ backgroundColor: '#252525', padding: '34px 33px 20px 33px' }}
+          style={{ backgroundColor: '#252525', padding: '34px 33px 20px 33px', marginTop: '24px' }}
           className='w-full border-t-4 rounded-sm border-blue-200'
         >
           <div className='flex items-center justify-between'>
@@ -325,7 +335,7 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div className='flex flex-wrap gap-x-10 ' style={{ marginTop: '33px', width:'100%' }}>
+          <div className='flex flex-wrap gap-x-10 ' style={{ marginTop: '33px', width: '100%' }}>
             <TextField label='Enter Your email address:' onChange={() => {}} />
             <TextField label='Enter Your Password:' onChange={() => {}} />
           </div>

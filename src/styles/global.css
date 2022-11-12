@@ -39,10 +39,15 @@ body {
   font-size: 35px;
 }
 
-
-
 .text-4xl {
   font-size: 64px;
+}
+
+
+
+
+.px45 {
+  font-size: 45px;
 }
 
 @font-face {

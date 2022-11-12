@@ -24,7 +24,7 @@ const Index = () => {
           </MainSection>
         </div>
         <div
-          className='grid grid-cols-4 gap-y-10 mt-24 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center '
+          className='grid grid-cols-4 gap-y-10 mt-24 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:place-items-stretch xs:place-items-center'
           style={{ marginTop: '128px' }}
         >
           <Card
@@ -69,8 +69,7 @@ const Index = () => {
           />
         </div>
 
-        <div className='mt-20'>
-         
+        <div style={{ marginTop: '150px' }}>
           <TopProxy />
         </div>
       </Body>

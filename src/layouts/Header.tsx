@@ -75,7 +75,7 @@ export const Header = () => {
             </svg>
           </div>
 
-          <div className='flex flex-col gap-y-10 items-center justify-center my-10'>
+          <div className='flex flex-col gap-y-6 items-center justify-center my-5'>
             {Routes.map((R, index) => (
               <a
                 key={index}
@@ -87,16 +87,16 @@ export const Header = () => {
             ))}
 
             <a
-              className='self-center text-white text-xl font-bold mt-20 hover:text-blue-200 cursor-pointer'
+              className='self-center text-white text-xl font-bold mt-10 hover:text-blue-200 cursor-pointer'
               onClick={() => push('login')}
             >
-              Login
+              LOGIN
             </a>
             <a
               className='self-center text-white text-xl font-bold hover:text-blue-200 cursor-pointer'
               onClick={() => push('login')}
             >
-              SignUp
+              SIGNUP
             </a>
           </div>
         </div>

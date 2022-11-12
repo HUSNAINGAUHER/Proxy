@@ -25,11 +25,13 @@ export const WindowClientBanner = () => {
           <p className='whitespace-pre-line' style={{ fontSize: '24px' }}>
             Your PC Install is ready!
           </p>
-          <p className='whitespace-pre-line' style={{ fontSize: '64px' , lineHeight:'90px'}}>
+          <p
+            className='whitespace-pre-line xs:text-5xl md:text-6xl'
+          >
             Windows client
           </p>
           <IconList list={list} />
-          <div style={{marginTop:'43px'}}>
+          <div style={{ marginTop: '43px' }}>
             <WindowDownloadButton version='Version 1.45' />
           </div>
         </div>

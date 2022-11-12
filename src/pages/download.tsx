@@ -31,7 +31,7 @@ const Download = () => {
           </div>
         </div>
 
-        <div className='mt-20'>
+        <div style={{marginTop:'160px'}}>
           <Section
             image='/assets/images/DownloadV2.svg'
             subHeading='Choose Proxy Proxy'
@@ -41,7 +41,7 @@ const Download = () => {
           />
         </div>
 
-        <div className='flex flex-col items-center my-20'>
+        <div className='flex flex-col items-center' style={{marginTop:'100px'}}>
           <div className='text-center' style={{ fontSize: '45px', lineHeight: '63.19px' }}>
             Choose the right plan that fits <br /> your business.
           </div>

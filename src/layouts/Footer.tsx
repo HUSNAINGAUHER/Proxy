@@ -57,10 +57,12 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-between sm:justify-center xs:justify-center lg:justify-between gap-x-40 flex-wrap mt-10'>
+        <div className='flex justify-between sm:justify-center xs:justify-center lg:justify-between xs:gap-x-20 md:gap-x-40 flex-wrap mt-10'>
           <ListItem heading='About Us' links={AboutUs} />
           <ListItem heading='Navigation' links={Navigation} />
-          <ListItem heading='Contact' links={Contact} />
+          <div className='xs:hidden md:block'>
+            <ListItem heading='Contact' links={Contact} />
+          </div>
         </div>
       </div>
       <div className='flex justify-center items-center py-10 px-20 text-center'>

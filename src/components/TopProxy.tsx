@@ -56,9 +56,14 @@ export const TopProxy = () => {
   return (
     <>
       <div className='flex justify-center'>
-        <div style={{ fontSize: '45px' }}>Top 10 proxy regions</div>
+        <div className='text-center xs:text-2xl md:text-5xl'>
+          Top 10 proxy regions
+        </div>
       </div>
-      <div className='grid grid-cols-5 gap-y-10 gap-x-20 mt-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
+      <div
+        className='grid grid-cols-5 gap-y-10 gap-x-20 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5'
+        style={{ marginTop: '94px' }}
+      >
         {Regions.map((R, index) => (
           <Region IP={R.IP} key={index} country={R.country} icon={`/assets/images/${R.img}`} />
         ))}
