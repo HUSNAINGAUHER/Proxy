@@ -1,6 +1,8 @@
 import { PrimaryButton } from '@/components/Buttons/Button'
 import { Card } from '@/components/Cards/Card'
 import { MainSection, Section } from '@/components/Section'
+import { Map } from '@/components/Map'
+
 import { TopProxy } from '@/components/TopProxy'
 import { Body } from '@/layouts/Body'
 import { useRouter } from 'next/router'
@@ -71,6 +73,10 @@ const Index = () => {
 
         <div style={{ marginTop: '150px' }}>
           <TopProxy />
+        </div>
+
+        <div style={{ marginTop: '200px' }}>
+          <Map />
         </div>
       </Body>
     </>

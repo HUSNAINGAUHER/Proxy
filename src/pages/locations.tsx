@@ -1,5 +1,6 @@
 import { ContinentProxy, TopProxy } from '@/components/TopProxy'
 import { Body } from '@/layouts/Body'
+import { Map } from '@/components/Map'
 
 const Locations = () => {
   const Regions = [
@@ -56,7 +57,19 @@ const Locations = () => {
   ]
   return (
     <Body>
-      <div style={{marginTop:'140px'}}>
+      <div className='flex flex-col items-center' style={{ marginTop: '100px' }}>
+        <div className='text-center' style={{ fontSize: '45px', lineHeight: '63.19px' }}>
+          Residential Proxy Location
+        </div>
+        <div className='text-center' style={{ fontSize: '16px', marginTop: '20px' }}>
+          There are more than 50 million residential IPs in the world, and the most advanced <br />
+          proxy client solves IP restrictions.
+        </div>
+      </div>
+      <div style={{ marginTop: '200px' }}>
+        <Map />
+      </div>
+      <div style={{ marginTop: '140px' }}>
         <TopProxy />
       </div>
       <div style={{ marginTop: '105px' }}>

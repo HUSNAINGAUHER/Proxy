@@ -11,7 +11,7 @@ export const Footer = () => {
   ]
 
   const Navigation = [
-    { name: 'Location', link: '/location' },
+    { name: 'Location', link: '/locations' },
     { name: 'Download', link: '/download' },
     { name: 'Use Cases', link: '/use_cases' },
     { name: 'Pricing', link: '/pricing' },

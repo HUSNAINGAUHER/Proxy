@@ -4,6 +4,7 @@ type Props = {
   icon: string
   country: string
   IP: string
+  back?: boolean
 }
 
 export const Region = ({ IP, country, icon }: Props) => {
@@ -20,15 +21,19 @@ export const Region = ({ IP, country, icon }: Props) => {
   )
 }
 
-export const RegionContinent = ({ IP, country, icon }: Props) => {
+export const RegionContinent = ({ IP, country, icon, back }: Props) => {
   return (
-    <div className='flex items-center justify-start hover:bg-blue-100 rounded-lg px-4 py-2'>
+    <div
+      className={`${
+        back && 'bg-white'
+      } flex items-center justify-start hover:bg-blue-100 rounded-lg px-4 py-2 w-max`}
+    >
       <Image className='rounded-full' alt={country} width={50} height={50} src={icon} />
       <div className='flex flex-col items-start ml-5'>
-        <div className='text-blue-200' style={{ fontSize: '18px' }}>
+        <div className={`${back ? 'text-black' : 'text-blue-200'}`} style={{ fontSize: '18px' }}>
           {country}
         </div>
-        <div className='text-blue-200 ' style={{ fontSize: '14px' }}>
+        <div className={`${back ? 'text-black' : 'text-blue-200'}`} style={{ fontSize: '14px' }}>
           {IP}
         </div>
       </div>

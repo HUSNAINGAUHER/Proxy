@@ -3,6 +3,7 @@ import { Section } from '@/components/Section'
 import { WindowClientBanner } from '@/components/WindowClient'
 import { Body } from '@/layouts/Body'
 import { useRouter } from 'next/router'
+import { Map } from '@/components/Map'
 
 const Download = () => {
   const { push } = useRouter()
@@ -31,7 +32,7 @@ const Download = () => {
           </div>
         </div>
 
-        <div style={{marginTop:'160px'}}>
+        <div style={{ marginTop: '160px' }}>
           <Section
             image='/assets/images/DownloadV2.svg'
             subHeading='Choose Proxy Proxy'
@@ -41,7 +42,7 @@ const Download = () => {
           />
         </div>
 
-        <div className='flex flex-col items-center' style={{marginTop:'100px'}}>
+        <div className='flex flex-col items-center' style={{ marginTop: '100px' }}>
           <div className='text-center' style={{ fontSize: '45px', lineHeight: '63.19px' }}>
             Choose the right plan that fits <br /> your business.
           </div>
@@ -57,6 +58,9 @@ const Download = () => {
               showArrow
             />
           </div>
+        </div>
+        <div style={{ marginTop: '200px' }}>
+          <Map />
         </div>
       </Body>
     </>
