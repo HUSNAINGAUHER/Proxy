@@ -5,8 +5,8 @@ export const Regions = [
     img: 'UnitedStates.svg',
     country: 'United States',
     IP: '3,599,080 IPs',
-    x: '483px',
-    y: '206px',
+    x: '907px',
+    y: '182px',
   },
   {
     img: 'Japan.svg',
