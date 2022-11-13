@@ -5,7 +5,7 @@ import { Regions } from './TopProxy'
 
 export const Map = () => {
   return (
-    <div className='map-img'>
+    <div className='map-img xs:hidden md:block'>
       <Image src='/assets/images/Map.svg' width={1208} height={530} alt='map' />
       <>
         {Regions.map(
@@ -49,6 +49,7 @@ const Marker = ({ x, y, HoverElement }: MarkerProps) => {
   return (
     <div
       style={{ left: x, top: y, position: 'absolute' }}
+      
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
